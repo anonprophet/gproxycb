@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainform.o
+./release\helper.o
+./release\gpsprotocol.o
+./release\gproxy.o
+./release\gameprotocol.o
+./release\config.o
+./release\commandpacket.o
+./release\bnetprotocol.o
+./release\bnet.o
+./release\bncsutilinterface.o
+./release\moc_mainform.o
+./release\moc_gproxy.o
+);
