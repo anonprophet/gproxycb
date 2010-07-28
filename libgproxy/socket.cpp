@@ -256,14 +256,14 @@ void CTCPSocket :: DoRecv( fd_set *fd )
 
 			m_HasError = true;
 			m_Error = GetLastError( );
-			CONSOLE_Print( "[TCPSOCKET] error (recv) - " + GetErrorString( ) +" from " + GetIPString( ));
+			CONSOLE_Print( "[TCPSOCKET] error (recv) - " + GetErrorString( ) );
 			return;
 		}
 		else if( c == 0 )
 		{
 			// the other end closed the connection
 
-			CONSOLE_Print( "[TCPSOCKET] closed by remote host ["+GetIPString( ) +"]" );
+			CONSOLE_Print( "[TCPSOCKET] closed by remote host" );
 			m_Connected = false;
 		}
 		else if( c > 0 )
@@ -305,7 +305,7 @@ void CTCPSocket :: DoSend( fd_set *send_fd )
 
 			m_HasError = true;
 			m_Error = GetLastError( );
-			CONSOLE_Print( "[TCPSOCKET] error (send) - " + GetErrorString( ) +" ["+GetIPString( ) +"]" );
+			CONSOLE_Print( "[TCPSOCKET] error (send) - " + GetErrorString( ) );
 			return;
 		}
 		else if( s > 0 )

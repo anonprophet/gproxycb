@@ -16,27 +16,21 @@
 
 */
 
-#ifndef COMMANDPACKET_H
-#define COMMANDPACKET_H
+#include "gproxy.h"
+#include "commandpacket.h"
 
 //
 // CCommandPacket
 //
 
-class CCommandPacket
+CCommandPacket :: CCommandPacket( unsigned char nPacketType, int nID, QByteArray nData )
 {
-private:
-	unsigned char m_PacketType;
-	int m_ID;
-	BYTEARRAY m_Data;
+	m_PacketType = nPacketType;
+	m_ID = nID;
+	m_Data = nData;
+}
 
-public:
-	CCommandPacket( unsigned char nPacketType, int nID, BYTEARRAY nData );
-	~CCommandPacket( );
+CCommandPacket :: ~CCommandPacket( )
+{
 
-	unsigned char GetPacketType( )	{ return m_PacketType; }
-	int GetID( )					{ return m_ID; }
-	BYTEARRAY GetData( )			{ return m_Data; }
-};
-
-#endif
+}

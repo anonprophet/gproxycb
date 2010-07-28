@@ -16,27 +16,29 @@
 
 */
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef COMMANDPACKET_H
+#define COMMANDPACKET_H
+
+#include <QByteArray>
 
 //
-// CConfig
+// CCommandPacket
 //
 
-class CConfig
+class CCommandPacket
 {
 private:
-	map<string, string> m_CFG;
+	unsigned char m_PacketType;
+	int m_ID;
+        QByteArray m_Data;
 
 public:
-	CConfig( );
-	~CConfig( );
+        CCommandPacket( unsigned char nPacketType, int nID, QByteArray nData );
+	~CCommandPacket( );
 
-	void Read( string file );
-	bool Exists( string key );
-	int GetInt( string key, int x );
-	string GetString( string key, string x );
-	void Set( string key, string x );
+	unsigned char GetPacketType( )	{ return m_PacketType; }
+        int GetID( )			{ return m_ID; }
+        QByteArray GetData( )		{ return m_Data; }
 };
 
 #endif

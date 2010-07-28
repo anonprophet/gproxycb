@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\mainform.o
+./debug\helper.o
+./debug\gpsprotocol.o
+./debug\gproxy.o
+./debug\gameprotocol.o
+./debug\config.o
+./debug\commandpacket.o
+./debug\bnetprotocol.o
+./debug\bnet.o
+./debug\bncsutilinterface.o
+./debug\moc_mainform.o
+./debug\moc_gproxy.o
+);
